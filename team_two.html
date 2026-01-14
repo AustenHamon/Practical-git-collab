@@ -17,10 +17,11 @@
 
 .team-header {
     padding: 60px 0;
-    background: rgba(255, 255, 255, 0.85); /* semi-transparent white */
+    background:transparent; /* semi-transparent white */
     margin-bottom: 40px;
     border-bottom: 1px solid #dee2e6;
 }
+
 
 /* Ensures empty quote boxes maintain some structure */
 .quote-container {
@@ -29,14 +30,25 @@
 .typing-text {
     font-size: 3rem;
     font-weight: 700;
-    color: #212529;
+    color: #ebf1f7;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid #212529;
+    border-right: 3px solid #f8f8f8;
     width: 0;
     animation: typing 3.5s steps(30, end) forwards,
                blink 0.75s step-end infinite;
 }
+.lead {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #f9f5f5;
+    background: #f5f6fa;
+    padding: 15px 20px;
+    border-left: 5px solid #007bff;
+    border-radius: 6px;
+}
+
+
 
 /* Typing effect */
 @keyframes typing {
@@ -54,7 +66,7 @@
         border-color: transparent;
     }
     50% {
-        border-color: #212529;
+        border-color: #ffffff;
     }
 }
 
