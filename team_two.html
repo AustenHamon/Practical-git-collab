@@ -26,6 +26,38 @@
 .quote-container {
     min-height: 80px;
 }
+.typing-text {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #212529;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #212529;
+    width: 0;
+    animation: typing 3.5s steps(30, end) forwards,
+               blink 0.75s step-end infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor */
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #212529;
+    }
+}
+
 
     </style>
 </head>
@@ -34,7 +66,7 @@
 
     <header class="team-header text-center">
         <div class="container">
-            <h1 class="display-4 fw-bold">[Team Faka Noma yini]</h1>
+            <h1 class="typing-text">Team Faka Noma yini</h1>
             <p class="lead text-muted">To collaborate, innovate, and deliver impactful solutions by combining
                 creativity, technology, and teamwork to solve real-world challenges.</p>
         </div>
