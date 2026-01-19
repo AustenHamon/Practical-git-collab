@@ -5,22 +5,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Our Team</title>
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
-            background-color: #f8f9fa;
+            background-image: url("Background.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         .team-header {
             padding: 60px 0;
-            background: #ffffff;
+            background: transparent;
             margin-bottom: 40px;
             border-bottom: 1px solid #dee2e6;
         }
 
-        /* Ensures empty quote boxes maintain some structure */
-        .quote-container {
-            min-height: 80px;
+        .typing-text {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ebf1f7;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #f8f8f8;
+            width: 0;
+            animation: typing 3.5s steps(30, end) forwards,
+                blink 0.75s step-end infinite;
+        }
+
+        .lead {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #000;
+            background: #f5f6fa;
+            padding: 15px 20px;
+            border-left: 5px solid #007bff;
+            border-radius: 6px;
+        }
+
+        /* ===== Animated Gradient Border ===== */
+        .gradient-border {
+            position: relative;
+            border-radius: 16px;
+            padding: 3px;
+            height: 100%;
+        }
+
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            background: linear-gradient(45deg,
+                    #ff004c,
+                    #ff8c00,
+                    #40e0d0,
+                    #7b2cff,
+                    #ff004c);
+            background-size: 400% 400%;
+            animation: gradientMove 6s linear infinite;
+            z-index: 0;
+        }
+
+        .gradient-border>.card {
+            position: relative;
+            z-index: 1;
+            border-radius: 13px;
+            height: 100%;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ===== Equal Card Alignment ===== */
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        /* Typing effect */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Cursor blink */
+        @keyframes blink {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #ffffff;
+            }
         }
     </style>
 </head>
@@ -29,25 +133,29 @@
 
     <header class="team-header text-center">
         <div class="container">
-            <h1 class="display-4 fw-bold">[Team Faka Noma yini]</h1>
-            <p class="lead text-muted">To collaborate, innovate, and deliver impactful solutions by combining creativity, technology, and teamwork to solve real-world challenges.</p>
+            <h1 class="typing-text">Team Faka Noma yini</h1>
+            <p class="lead">
+                To collaborate, innovate, and deliver impactful solutions by combining
+                creativity, technology, and teamwork to solve real-world challenges.
+            </p>
         </div>
     </header>
 
     <main class="container mb-5">
         <div class="row row-cols-1 row-cols-md-2 g-4">
 
+            <!-- Andile -->
             <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h3 class="card-title h5 mb-3 text-primary">Andile</h3>
-                        <div class="quote-container">
+                <div class="gradient-border">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="card-title h5 mb-3 text-primary">Andile</h3>
                             <figure>
                                 <blockquote class="blockquote">
-                                    <p></p>
+                                    <p>It gets better with money, not with time</p>
                                 </blockquote>
                                 <figcaption class="blockquote-footer">
-                                    <cite title="Source Title"></cite>
+                                    <cite>Andile</cite>
                                 </figcaption>
                             </figure>
                         </div>
@@ -55,17 +163,18 @@
                 </div>
             </div>
 
+            <!-- Sonkhe -->
             <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h3 class="card-title h5 mb-3 text-primary">Sonkhe</h3>
-                        <div class="quote-container">
+                <div class="gradient-border">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="card-title h5 mb-3 text-primary">Sonkhe</h3>
                             <figure>
                                 <blockquote class="blockquote">
-                                    <p></p>
+                                    <p>Always code to make $</p>
                                 </blockquote>
                                 <figcaption class="blockquote-footer">
-                                    <cite title="Source Title"></cite>
+                                    <cite>Sonkhe</cite>
                                 </figcaption>
                             </figure>
                         </div>
@@ -73,17 +182,18 @@
                 </div>
             </div>
 
+            <!-- Juwi -->
             <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h3 class="card-title h5 mb-3 text-primary">Juwi</h3>
-                        <div class="quote-container">
+                <div class="gradient-border">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="card-title h5 mb-3 text-primary">Juwi</h3>
                             <figure>
                                 <blockquote class="blockquote">
-                                    <p>I trust everyone,It's just the devil inside them I don't trust</p>
+                                    <p>I trust everyone, it's just the devil inside them I don't trust</p>
                                 </blockquote>
                                 <figcaption class="blockquote-footer">
-                                    <cite title="Source Title"></cite>
+                                    <cite>Juwi</cite>
                                 </figcaption>
                             </figure>
                         </div>
@@ -91,17 +201,18 @@
                 </div>
             </div>
 
+            <!-- Lihle -->
             <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h3 class="card-title h5 mb-3 text-primary">Lihle</h3>
-                        <div class="quote-container">
+                <div class="gradient-border">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="card-title h5 mb-3 text-primary">Lihle</h3>
                             <figure>
                                 <blockquote class="blockquote">
                                     <p>Do it or Leave It</p>
                                 </blockquote>
                                 <figcaption class="blockquote-footer">
-                                    <cite title="Source Title"></cite>
+                                    <cite>Lihle</cite>
                                 </figcaption>
                             </figure>
                         </div>
@@ -113,6 +224,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
