@@ -1,123 +1,228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Our Team</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        margin: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Our Team</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #f8f9fa;
-      margin: 0;
-    }
+      .team-header {
+        padding: 60px 0;
+        background: #fff;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #dee2e6;
+        text-align: center;
+      }
 
-    .team-header {
-      padding: 60px 0;
-      background: #fff;
-      margin-bottom: 40px;
-      border-bottom: 1px solid #dee2e6;
-      text-align: center;
-    }
+      .quote-container {
+        min-height: 80px;
+      }
 
-    .quote-container {
-      min-height: 80px;
-    }
+      /* Initial card state for animation */
+      .card {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          transform 0.5s ease,
+          opacity 0.5s ease,
+          box-shadow 0.4s ease;
+      }
 
-    /* Initial card state for animation */
-    .card {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: transform 0.5s ease, opacity 0.5s ease;
-    }
+      /* Card hover state */
+      .card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
 
-    /* Card becomes visible */
-    .card.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-</head>
+      /* Optional: title color animation on hover */
+      .card:hover .card-title {
+        color: #0d6efd; /* Bootstrap primary */
+      }
 
-<body>
+      /* Optional: subtle border accent on hover */
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 0.375rem;
+        border: 2px solid transparent;
+        transition: border-color 0.4s ease;
+      }
 
-  <header class="team-header">
-    <h1 class="display-4 fw-bold">Hashtag Avengers</h1>
-    <p class="lead text-muted">Never walk alone</p>
-  </header>
+      .card:hover::before {
+        border-color: #0d6efd;
+      }
 
-  <main class="container mb-5">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
+      /* Card becomes visible */
+      .card.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
 
-      <div class="col">
-        <div class="card h-100 border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h3 class="card-title h5 mb-3 text-primary">Keneilwe</h3>
-            <div class="quote-container">
-              <blockquote class="blockquote">
-                <p>I am a passionate Full Stack Developer who enjoys building scalable, user-friendly applications.</p>
-              </blockquote>
+  <body>
+    <header class="team-header text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold" id="typing-title"></h1>
+        <p class="lead text-muted" id="typing-subtitle"></p>
+      </div>
+    </header>
+
+    <main class="container mb-5">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h3 class="card-title h5 mb-3 text-primary">Keneilwe</h3>
+              <div class="quote-container">
+                <figure>
+                  <blockquote class="blockquote">
+                    <p>
+                      I am a passionate Full Stack Developer who enjoys building
+                      scalable, user-friendly applications from concept to
+                      deployment. I am motivated by solving real-world problems
+                      through clean code, efficient systems, and continuous
+                      learning. I strive to bridge the gap between front-end
+                      experiences and back-end logic to create impactful digital
+                      solutions.
+                    </p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    <cite title="Role">Full Stack Developer</cite>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h3 class="card-title h5 mb-3 text-primary">Kgomotso</h3>
+              <div class="quote-container">
+                <figure>
+                  <blockquote class="blockquote">
+                    <p>
+                      Just like flowers in a garden, we grow stronger when we
+                      support one another💮🌸.
+                    </p>
+                    <p>Bloom with purpose, grow with passion 🌸.</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    <cite title="Source Title">kgomotso</cite>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h3 class="card-title h5 mb-3 text-primary">Austen</h3>
+              <div class="quote-container">
+                <figure>
+                  <blockquote class="blockquote">
+                    <p>
+                      In the quiet spaces between heartbeats, I have learned
+                      that the world offers two paths: one of alignment and one
+                      of illusion. To be led is to surrender the ego to a higher
+                      frequency, trusting that the rhythm of the stars and the
+                      pulse of the earth are not accidental, but intentional. It
+                      is a commitment to seeing the divine signature in the
+                      jagged mountain peak and the velvet petal of a flower.
+                    </p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    <cite title="Source Title">Disciple Of Jesus</cite>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h3 class="card-title h5 mb-3 text-primary">Vusumzi</h3>
+              <div class="quote-container">
+                <figure>
+                  <blockquote class="blockquote">
+                    <p>
+                      You still dont have to finish the whole marathon today!!
+                    </p>
+                    <p>learn smart not hard.</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    <cite title="Source Title">Motivational Insights</cite>
+                  </figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </main>
 
-      <div class="col">
-        <div class="card h-100 border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h3 class="card-title h5 mb-3 text-primary">Kgomotso</h3>
-            <div class="quote-container">
-              <blockquote class="blockquote">
-                <p>Just like flowers in a garden, we grow stronger when we support one another💮🌸.</p>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </div>
+    <script>
+      const cards = document.querySelectorAll(".card");
 
-      <div class="col">
-        <div class="card h-100 border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h3 class="card-title h5 mb-3 text-primary">Austen</h3>
-            <div class="quote-container">
-              <blockquote class="blockquote">
-                <p>In the quiet spaces between heartbeats, I have learned that the world offers two paths: one of
-                  alignment and one of illusion.</p>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card h-100 border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h3 class="card-title h5 mb-3 text-primary">Vusumzi</h3>
-            <div class="quote-container">
-              <blockquote class="blockquote">
-                <p>You still don't have to finish the whole marathon today!!</p>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </main>
-
-  <script>
-    const cards = document.querySelectorAll('.card');
-
-    // Staggered reveal on page load
-    window.addEventListener('load', () => {
-      cards.forEach((card, index) => {
-        setTimeout(() => {
-          card.classList.add('show');
-        }, index * 300); // 300ms delay between each card
+      // Staggered reveal on page load
+      window.addEventListener("load", () => {
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add("show");
+          }, index * 300); // 300ms delay between each card
+        });
       });
-    });
-  </script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const titleText = "Hashtag Avengers";
+      const subtitleText = "Never walk alone";
 
-</body>
+      const titleEl = document.getElementById("typing-title");
+      const subtitleEl = document.getElementById("typing-subtitle");
 
+      let titleIndex = 0;
+      let subtitleIndex = 0;
+
+      function typeTitle() {
+        if (titleIndex < titleText.length) {
+          titleEl.textContent += titleText.charAt(titleIndex);
+          titleEl.classList.add("typing-cursor");
+          titleIndex++;
+          setTimeout(typeTitle, 100);
+        } else {
+          titleEl.classList.remove("typing-cursor");
+          setTimeout(typeSubtitle, 500);
+        }
+      }
+
+      function typeSubtitle() {
+        if (subtitleIndex < subtitleText.length) {
+          subtitleEl.textContent += subtitleText.charAt(subtitleIndex);
+          subtitleEl.classList.add("typing-cursor");
+          subtitleIndex++;
+          setTimeout(typeSubtitle, 80);
+        } else {
+          subtitleEl.classList.remove("typing-cursor");
+        }
+      }
+
+      typeTitle();
+    </script>
+  </body>
 </html>
